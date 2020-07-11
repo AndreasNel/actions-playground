@@ -1,0 +1,18 @@
+name: String Replace Test
+
+on:
+  push:
+    branches: master
+
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+
+    steps:
+        - id: test
+          env:
+              STRVAR_ONE: '1'
+              STRVAR_TWO: '2'
+          uses: AndreasNel/string-vars-action@master
+          with:
+              instring: '{one} {one} {two}'
